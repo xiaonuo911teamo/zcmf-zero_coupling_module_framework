@@ -1,0 +1,4 @@
+set(OPENCV_FOUND TRUE)
+set(OPENCV_INCLUDE_DIR ${THIRD_PARTY_DIR}/opencv/include)
+file(GLOB_RECURSE OPENCV_LIBRARIES ${THIRD_PARTY_DIR}/opencv/lib/libopencv_*)
+

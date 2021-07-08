@@ -1,5 +1,3 @@
-# zcmf-zero_coupling_module_framework
-
 这是一个零耦合的模块工程架构。模块间的交互操作通过查询在静态存储区存放的注册函数的地址，传入相应参数，完成调用交互，从而达到所有模块均不互相依赖的目的。该架构适用于多任务并行执行，并且多有交互的情景，多用于C++后台服务和界面程序的底层架构。
 
 
@@ -29,17 +27,17 @@
 ## 框架现有的功能
 
 1. 服务机制&消息机制
-   服务机制和消息机制在messager中实现, [详细介绍](code/src/corelib/include/message/README.md)
+   服务机制和消息机制在messager中实现, [详细介绍](https://github.com/xiaonuo911teamo/zcmf-zero_coupling_module_framework/wiki/messager-%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E)
 2. 线程安装的变量封装
-   现已提供线程安全的变量封装以及vector/queue封装.[详细介绍](code/src/corelib/include/core/README.md)
+   现已提供线程安全的变量封装以及vector/queue封装.[详细介绍](https://github.com/xiaonuo911teamo/zcmf-zero_coupling_module_framework/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D)
 3. 模块线程管理
-   每个模块使用独立线程，模块运行模式提供2+1的方案。触发式调度模式和定时循环式处理模式+任务池模式。[详细介绍](code/src/corelib/include/pipe/README.md)
+   每个模块使用独立线程，模块运行模式提供2+1的方案。触发式调度模式和定时循环式处理模式+任务池模式。[详细介绍](https://github.com/xiaonuo911teamo/zcmf-zero_coupling_module_framework/wiki/pipe-%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E)
 4. 标准化log输出
-   提供六种等级的log输出模式，适用于不同场景，依次为DEBUG/INFO/WARNING/ERROR/FATAL/DIRECT。[详细介绍](code/src/corelib/include/log/README.md)
+   提供六种等级的log输出模式，适用于不同场景，依次为DEBUG/INFO/WARNING/ERROR/FATAL/DIRECT。[详细介绍](https://github.com/xiaonuo911teamo/zcmf-zero_coupling_module_framework/wiki/log%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E)
 5. 类似与电信号中断机制的信号诊断功能 
-   通过模拟电信号中**中断触发方式**, 对连续信号提供诊断支持.[详细介绍](code/src/corelib/include/diag/README.md)
+   通过模拟电信号中**中断触发方式**, 对连续信号提供诊断支持.[详细介绍](https://github.com/xiaonuo911teamo/zcmf-zero_coupling_module_framework/wiki/%E8%AF%8A%E6%96%AD%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E)
 6. 框架配置介绍
-   框架内的各个模块可以通过AppConfig中的静态函数, 获取指定类型的配置. 这些配置统一通过 DlUtils::initial_path(argv) 进行获取读入.[详细介绍](code/src/corelib/include/utils/README.md)
+   框架内的各个模块可以通过AppConfig中的静态函数, 获取指定类型的配置. 这些配置统一通过 DlUtils::initial_path(argv) 进行获取读入.[详细介绍](https://github.com/xiaonuo911teamo/zcmf-zero_coupling_module_framework/wiki/utils%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E)
 7. 进程CPU 内存实时记录
    server_proc模块可以通过实时记录/proc下的进程信息, 保存进程实时使用CPU和内存情况.[详细介绍](code/src/server_proc/README.md)
 8. 时序ulog存储
@@ -95,6 +93,4 @@
 ### 1.单个模块需要阻塞调用
 
 有时,我们会使用到someip ros这类的通讯机制, 其主要通过回调函数完成, 但是都需要调用一个阻塞线程, 用于监听. 这时, 建议不要在模块内自启线程, 而是直接让阻塞线程在 thread_func 函数内阻塞住. 同时, 重载基类函数stop,  实现阻塞线程的退出.
-
-
 

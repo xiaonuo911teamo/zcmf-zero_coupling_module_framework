@@ -1,0 +1,3 @@
+set(JSONCPP_FOUND TRUE)
+set(JSONCPP_INCLUDE_DIR ${THIRD_PARTY_DIR}/jsoncpp/include)
+file(GLOB_RECURSE JSONCPP_LIBRARIES ${THIRD_PARTY_DIR}/jsoncpp/lib/lib*.so*)

@@ -1,0 +1,6 @@
+set(PROTOBUF_FOUND TRUE)
+if(NOT PROTOC_EXEC)
+    set(PROTOC_EXEC ${THIRD_PARTY_DIR}/protobuf/bin/protoc)
+endif()
+set(PROTOBUF_INCLUDE_DIR ${THIRD_PARTY_DIR}/protobuf/include)
+set(PROTOBUF_LIBRARIES ${THIRD_PARTY_DIR}/protobuf/lib/libprotobuf.so)

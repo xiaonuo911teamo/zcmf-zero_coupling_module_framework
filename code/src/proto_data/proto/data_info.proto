@@ -1,0 +1,31 @@
+package message;
+
+message Double {
+    required string name = 1;
+    required double data = 2;
+}
+
+message Doubles {
+    required string name = 1;
+    repeated double data = 2;
+}
+
+message Long {
+    required string name = 1;
+    required int64 data = 2;
+}
+
+message Longs {
+    required string name = 1;
+    repeated int64 data = 2;
+}
+
+message String {
+    required string name = 1;
+    required string data = 2;
+}
+
+message BytesItem {
+    required int32 id = 1;
+    required bytes data = 2;
+}

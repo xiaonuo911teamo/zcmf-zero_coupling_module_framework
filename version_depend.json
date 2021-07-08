@@ -1,0 +1,16 @@
+{
+    "module":"zcmf",
+    "version":"1.0.0.0",
+    "depends":[
+        {
+            "name":"zeromq",
+            "version_id":"v_4.3.1",
+            "link":"https://codechina.csdn.net/xiaonuo911teamo/zeromq_zcmf_reply/uploads/24891b58e97b35c856eb1f512b7c196a/zeromq.tar.gz"
+        },
+        {
+            "name":"protobuf",
+            "version_id":"v_3.6.1",
+            "link":"https://codechina.csdn.net/xiaonuo911teamo/protobuf_zcmf_reply/uploads/bbe651e9c730b44508be6cc91ec3c576/protobuf.tar.gz"
+        }
+    ]
+}

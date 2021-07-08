@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message QnxProcStatus {
+    int64 pid                   = 1;  // process id
+    int64 tid                   = 2;  // thread id
+    int64 cpuid                 = 3;  // last cpu id
+    int64 priority              = 4;  // scheduler priority
+    string policy               = 5;  // scheduler policy: R,F,O,S
+    int64 mem                   = 6;  // process memory used, bytes
+    float cpu_used              = 7;  // =used/total
+    string proc_name            = 8;  // process filename
+    string thread_name          = 9;  // thread name or id
+};
+
+message QnxProcList {
+    int64 timestamp             = 1;  // system timestamp
+    float cpu_user              = 3;  // cpu user
+    float cpu_kernel            = 4;  // cpu kernel
+    repeated float cpu_idle     = 5;  // cpu idle
+    int64 mem_avail             = 6;  // memory avail, bytes
+    int64 mem_total             = 7;  // memory total, bytes
+    repeated QnxProcStatus proc_list = 8;
+};

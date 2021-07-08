@@ -1,0 +1,16 @@
+package message.fs;
+
+enum Trigger {
+    FailAction = 1; // FailAction: 失效动作
+    RecoveryAction = 2; // RecoveryAction: 恢复动作
+}
+message FailSafeState {
+    required uint32  dtc_number = 1;  // 故障代号，参见 DTCTable
+    required bool   status = 2;    // 状态 true: 正常 false: 异常
+    required int32   is_fail_act = 3;    // 状态 1: 已执行 　0: 未执行 　2:无需执行
+}
+message Action {
+    required uint32  dtc_number = 1;  // 故障代号，参见 DTCTable
+    required Trigger  trigger = 2;    // FailAction: 失效动作 RecoveryAction: 恢复动作
+    required bool  action_state = 3; // 状态 true: 完成 false: 未完成
+}
