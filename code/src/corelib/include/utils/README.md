@@ -5,13 +5,21 @@
 ### 目录说明
 
 -- app_preference: 单例AppPreference，用于保存整个程序使用的配置，按 std::map<group.key, value> 分类保存
+
 -- app_config: APP配置相关的函数
+
 -- app_util: 通用工具函数
+
 -- dl_utils: 框架模块加载方式封装
+
 -- timer_counter: 计时工具
+
 -- math_util: 数学相关的工具函数, 平均值等
+
 -- json_writer: json读写工具, 尚不完整, 后续补充
+
 -- data_reader: 文件读取, 尚不完整, 后续补充
+
 -- data_recoder: 文件写入, 尚不完整, 后续补充
 
 ### APP配置使用方式
